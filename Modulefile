@@ -1,0 +1,8 @@
+name 'evenup-pdns'
+version '0.1.0'
+author 'Justin Lambert <jlambert@letsevenup.com>'
+license 'Private'
+summary 'Installs '
+description 'Installs the facter package and dependencies.'
+source 'https://github.com/evenup/evenup-pdns'
+project_page 'https://github.com/evenup/evenup-pdns'

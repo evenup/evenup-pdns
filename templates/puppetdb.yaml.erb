@@ -1,0 +1,5 @@
+---
+:server: <%= scope.lookupvar('pdns::puppetdb_server') %>
+:logfile: <%= scope.lookupvar('pdns::puppetdb_logfile') %>
+:loglevel: <%= scope.lookupvar('pdns::puppetdb_loglevel') %>
+:reload_interval: <%= scope.lookupvar('pdns::puppetdb_reload') %>

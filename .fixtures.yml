@@ -1,0 +1,6 @@
+fixtures:
+  repositories:
+    concat: git://github.com/ripienaar/puppet-concat.git
+  symlinks:
+    pdns: "#{source_dir}"
+
