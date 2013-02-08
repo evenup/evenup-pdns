@@ -1,7 +1,16 @@
-# TODO - document me
+# == Class: pdns::install
+#
+# This class installs the files and packages needed for the PowerDNS services.
+# It is not intended to be directly called.
+#
+# === Authors
+#
+# * Justin Lambert <mailto:jlambert@letsevenup.com>
+#
 class pdns::install {
 
   include concat::setup
+  include ruby::httparty
 
   Package {
     notify  => Class['pdns::service']

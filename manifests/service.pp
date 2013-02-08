@@ -1,4 +1,12 @@
-# TODO - document me
+# == Class: pdns::install
+#
+# This class manages the PowerDNS services
+# It is not intended to be directly called.
+#
+# === Authors
+#
+# * Justin Lambert <mailto:jlambert@letsevenup.com>
+#
 class pdns::service {
 
   service { 'pdns':

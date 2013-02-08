@@ -1,7 +1,15 @@
 #!/usr/bin/ruby
 
+# Queries the PuppetDB V2 interface for nodes
 # Some ideas taken from https://github.com/ripienaar/ruby-pdns
-# http://doc.powerdns.com/backends-detail.html#pipebackend
+# PowerDNS pipe backend documentation: http://doc.powerdns.com/backends-detail.html#pipebackend
+#
+# Copyright EvenUp Inc 2013
+#
+# Authors:
+# Justin Lambert <jlambert@letsevenup.com>
+#
+#
 require "rubygems"
 require "httparty"
 require "open-uri"

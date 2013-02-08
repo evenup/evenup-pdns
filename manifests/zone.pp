@@ -1,4 +1,29 @@
-# TODO - document me
+# == Define: pdns::zone
+#
+# This define installs BIND zonefiles for the bind backend in PowerDNS
+#
+#
+# === Parameters
+#
+# [*source*]
+#   String. Source of the zonefile
+#
+# [*ensure*]
+#   String.  Controls if the file exists or is absent.  Default is present.
+#
+#
+# === Examples
+#
+#   pdns::zone {
+#     'corp.example.com':
+#       source => 'puppet:///data/bind/crop.example.com.zone'
+#   }
+#
+#
+# === Authors
+#
+# * Justin Lambert <mailto:jlambert@letsevenup.com>
+#
 define pdns::zone (
   $source,
   $ensure = 'present',
@@ -26,7 +51,7 @@ define pdns::zone (
   concat::fragment{"${name}_zone":
     ensure  => $ensure,
     target  => '/etc/named.conf',
-    content => "zone \"${name}\" IN { type master; file \"/etc/pdns/${name}.zone\"; };",
+    content => "zone \"${name}\" IN { type master; file \"/etc/pdns/zones/${name}.zone\"; };",
   }
 }
 

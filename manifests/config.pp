@@ -1,4 +1,12 @@
-# TODO - document me
+# == Class: pdns::install
+#
+# This class ensures config files are created for the PowerDNS service
+# It is not intended to be directly called.
+#
+# === Authors
+#
+# * Justin Lambert <mailto:jlambert@letsevenup.com>
+#
 class pdns::config {
 
   File {
