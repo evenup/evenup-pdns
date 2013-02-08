@@ -8,7 +8,6 @@ describe 'pdns::install', :type => :class do
   it { should contain_package('pdns-backend-pipe') }
   it { should contain_package('pdns-recursor') }
   it { should contain_file('/usr/sbin/pdns_puppetdb.rb') }
-  it { should contain_concat('/etc/named.conf') }
 
 end
 

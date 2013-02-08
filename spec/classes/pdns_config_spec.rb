@@ -10,6 +10,7 @@ describe 'pdns::config', :type => :class do
   it { should contain_file('/etc/pdns/pdns.conf').with_notify('Class[Pdns::Service]') }
   it { should contain_file('/etc/pdns/puppetdb.yaml').with_notify('Class[Pdns::Service]') }
   it { should contain_file('/etc/pdns-recursor/recursor.conf').with_notify('Class[Pdns::Service]') }
+  it { should contain_concat('/etc/named.conf') }
 
 end
 
