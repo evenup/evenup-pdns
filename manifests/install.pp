@@ -40,6 +40,15 @@ class pdns::install {
     source  => 'puppet:///modules/pdns/pdns_puppetdb.rb'
   }
 
+  file { $pdns::puppetdb_logfile:
+    ensure  => file,
+    owner   => 'pdns',
+    group   => 'pdns',
+    mode    => '0664',
+    replace => false,
+    source  => 'puppet:///modules/pdns/empty',
+  }
+
   concat { '/etc/named.conf':
     owner => 'pdns',
     group => 'pdns',
