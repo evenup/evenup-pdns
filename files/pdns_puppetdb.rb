@@ -71,11 +71,12 @@ class PDNSQuery
           hostname = request[1].downcase
           case request[0]
           when 'Q'
-            @log.info "Looking up #{hostname}"
+            @log.debug "Looking up #{hostname}"
             if @results.has_key?(hostname) && (request[3] == 'ANY' || request[3] == 'A')
+              @log.debug "#{hostname} found"
               puts "DATA\t#{hostname}\tIN\tA\t3600\t#{request[4]}\t#{@results[request[1]]}"
             else
-              @log.info "#{hostname} not found"
+              @log.debug "#{hostname} not found"
             end
             puts 'END'
           when 'AXFR'
@@ -115,7 +116,7 @@ class PDNSQuery
           new_results[result['value']] = result['certname'].downcase
         end
       end
-      @log.debug "#{new_results.length} records loaded (#{@results.length} previously)"
+      @log.info "#{new_results.length} records loaded (#{@results.length} previously)" if new_results.length != @results.length
       @results = new_results
     end
   end
