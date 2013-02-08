@@ -48,10 +48,4 @@ class pdns::install {
     replace => false,
     source  => 'puppet:///modules/pdns/empty',
   }
-
-  concat { '/etc/named.conf':
-    owner => 'pdns',
-    group => 'pdns',
-    mode  => '0444',
-  }
 }

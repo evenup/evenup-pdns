@@ -43,4 +43,10 @@ class pdns::config {
     mode    => '0444',
     content => template('pdns/recursor.conf.erb'),
   }
+
+  concat { '/etc/named.conf':
+    owner => 'pdns',
+    group => 'pdns',
+    mode  => '0444',
+  }
 }
