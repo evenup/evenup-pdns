@@ -8,7 +8,6 @@ describe 'pdns::install', :type => :class do
   it { should contain_package('pdns-backend-pipe') }
   it { should contain_package('pdns-recursor') }
   it { should contain_file('/usr/sbin/pdns_puppetdb.rb') }
-  it { should contain_file('/var/log/pdns_puppetdb.log').with_replace(false)}
 
 end
 
