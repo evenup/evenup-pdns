@@ -12,6 +12,7 @@ class pdns::service {
   service { 'pdns':
     ensure  => running,
     enable  => true,
+    restart => '/etc/init.d/pdns restart',
   }
 
   service { 'pdns-recursor':
