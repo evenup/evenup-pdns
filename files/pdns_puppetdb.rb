@@ -107,6 +107,7 @@ class PDNSQuery
     rescue => exception
       @log.fatal "#{exception.backtrace}: #{exception.message} (#{exception.class})"
     else
+      @log.debug "Processing response"
       new_results = {}
       if response.success?
         JSON.parse(response.body).each do |result|
@@ -115,9 +116,15 @@ class PDNSQuery
           # Reverse lookup
           new_results[result['value']] = result['certname'].downcase
         end
+        if new_results.length == 0
+          @log.warn "Query returned 0 results.  Refusing to flush old results"
+        else
+          @log.info "#{new_results.length} records loaded (#{@results.length} previously)" if new_results.length != @results.length
+          @results = new_results
+        end
+      else
+        @log.warn "response was unsuccessful #{response.code}"
       end
-      @log.info "#{new_results.length} records loaded (#{@results.length} previously)" if new_results.length != @results.length
-      @results = new_results
     end
   end
 
