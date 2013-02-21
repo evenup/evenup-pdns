@@ -19,4 +19,5 @@ class pdns::service {
     enable  => true,
   }
 
+  sensu::client_subscription { 'pdns': }
 }
