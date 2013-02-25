@@ -21,7 +21,7 @@ class pdns::service {
   }
 
   $monitoring = hiera('monitoring', '')
-  
+
   case $monitoring {
     'sensu':  { sensu::client_subscription { 'pdns': } }
   }
