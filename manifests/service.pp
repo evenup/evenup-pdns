@@ -20,5 +20,9 @@ class pdns::service {
     enable  => true,
   }
 
-  sensu::client_subscription { 'pdns': }
+  $monitoring = hiera('monitoring', '')
+  
+  case $monitoring {
+    'sensu':  { sensu::client_subscription { 'pdns': } }
+  }
 }
