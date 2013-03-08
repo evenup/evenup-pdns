@@ -13,8 +13,8 @@ Released under the Apache 2.0 licence
 
 Usage:
 ------
-Configuration variables are retrieved from Hiera for configuring
-the hostname of the PuppetDB server and frequency of the cache refresh
+Configuration is done through class parameters for configuring the
+hostname of the PuppetDB server and frequency of the cache refresh
 as well as a regex (if desired) to filter what requests should be
 passed to the PuppetDB pipe backend.
 
@@ -31,13 +31,13 @@ To install a BIND zonefile for corp.example.com:
   }
 </pre>
 
-Hiera Variables:
+Class Variables:
 ----------------
-* pdns::puppetdb_server - Hostname of the puppetdb server.
-* pdns::puppetdb_logfile - Location to write the logfile for the pipe backend
-* pdns::puppetdb_loglevel - Log level of the pipe backend
-* pdns::puppetdb_reload - Frequency to refresh the node names from PuppetDB
-* pdns::pdns_regex - Regex for matching what queries should be passed
+* puppetdb_server - Hostname of the puppetdb server.
+* puppetdb_logfile - Location to write the logfile for the pipe backend
+* puppetdb_loglevel - Log level of the pipe backend
+* puppetdb_reload - Frequency to refresh the node names from PuppetDB
+* pdns_regex - Regex for matching what queries should be passed
 to the PuppetDB pipe backend.  An example which would query the PuppetDB
 backend for all hostnames in the corp.example.com domain and reverse lookups
 for any IP in the 10/8 space would be:
@@ -51,6 +51,11 @@ Dependencies:
 * [puppet-concat](https://github.com/ripienaar/puppet-concat)
 * [evenup-ruby](https://github.com/evenup/evenup-ruby)
 
+
+Monitoring:
+-------------
+Monitoring is controled through the hiera variable 'monitoring'.  Currently there is support
+for [Sensu](http://sensuapp.com) using the [sensu-puppet module](https://github.com/sensu/sensu-puppet).  Please feel free to add other monitoring tools.
 
 Known Issues:
 -------------
