@@ -20,4 +20,11 @@ class pdns::service {
     enable  => true,
   }
 
+  $monitoring = hiera('monitoring', '')
+
+  case $monitoring {
+    'sensu': {
+      include pdns::monitoring::sensu
+    }
+  }
 }

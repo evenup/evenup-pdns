@@ -2,6 +2,7 @@ fixtures:
   repositories:
     concat: git://github.com/ripienaar/puppet-concat.git
     ruby: git://github.com/evenup/evenup-ruby.git
+    sensu: git://github.com/sensu/sensu-puppet.git
   symlinks:
     pdns: "#{source_dir}"
 
