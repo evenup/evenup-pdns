@@ -1,3 +1,7 @@
+v1.0.0:
+  Add monitoring framework
+  Add sensu monitoring
+  Switch to paramertized class
 v0.1.1:
   Documentation
   Minor fixes
