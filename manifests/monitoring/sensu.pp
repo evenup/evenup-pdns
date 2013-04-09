@@ -12,21 +12,18 @@ class pdns::monitoring::sensu {
     handlers    => ['default'],
     standalone  => true,
     command     => '/etc/sensu/plugins/check-procs.rb -p /usr/sbin/pdns_recursor -c 1 -C 1',
-    refresh     => 1800,
   }
 
   sensu::check { 'pdns-server-running':
     handlers    => 'default',
     standalone  => true,
     command     => '/etc/sensu/plugins/check-procs.rb -p /usr/sbin/pdns_server -w 2 -c 2 -W 2 -C 1',
-    refresh     => 1800,
   }
   
   sensu::check { 'dns-resolution':
     handlers    => 'default',
     standalone  => true,
     command     => '/etc/sensu/plugins/check-dns.rb -d google.com',
-    refresh     => 1800,
   }
 
   sensu::subscription { 'pdns': }
