@@ -20,12 +20,13 @@ class pdns(
   $puppetdb_logfile   = '/var/log/pdns_puppetdb.log',
   $puppetdb_loglevel  = 'info',
   $puppetdb_reload    = '30',
-  $pdns_regex         = ''
+  $pdns_regex         = '',
+  $monitoring         = '',
 ) {
 
   class {'pdns::install': } ->
   class {'pdns::config': } ->
-  class {'pdns::service': } ->
+  class {'pdns::service': monitoring => $monitoring } ->
   Class['pdns']
 
 }
