@@ -7,7 +7,9 @@
 #
 # * Justin Lambert <mailto:jlambert@letsevenup.com>
 #
-class pdns::service {
+class pdns::service (
+  $monitoring = '',
+){
 
   service { 'pdns':
     ensure  => running,
@@ -19,8 +21,6 @@ class pdns::service {
     ensure  => running,
     enable  => true,
   }
-
-  $monitoring = hiera('monitoring', '')
 
   case $monitoring {
     'sensu': {
