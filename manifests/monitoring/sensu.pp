@@ -19,7 +19,7 @@ class pdns::monitoring::sensu {
     standalone  => true,
     command     => '/etc/sensu/plugins/check-procs.rb -p /usr/sbin/pdns_server -w 2 -c 2 -W 2 -C 1',
   }
-  
+
   sensu::check { 'dns-resolution':
     handlers    => 'default',
     standalone  => true,

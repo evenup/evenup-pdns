@@ -26,5 +26,6 @@ class pdns::service {
     'sensu': {
       include pdns::monitoring::sensu
     }
+    default: {}
   }
 }
