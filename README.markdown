@@ -52,11 +52,6 @@ Dependencies:
 * [evenup-ruby](https://github.com/evenup/evenup-ruby)
 
 
-Monitoring:
--------------
-Monitoring is controled through the hiera variable 'monitoring'.  Currently there is support
-for [Sensu](http://sensuapp.com) using the [sensu-puppet module](https://github.com/sensu/sensu-puppet).  Please feel free to add other monitoring tools.
-
 Known Issues:
 -------------
 * Only tested on RHEL 6.3 and puppet 3.0.1 using the pdns packages from EPEL
