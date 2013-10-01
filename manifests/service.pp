@@ -7,9 +7,7 @@
 #
 # * Justin Lambert <mailto:jlambert@letsevenup.com>
 #
-class pdns::service (
-  $monitoring = '',
-){
+class pdns::service {
 
   service { 'pdns':
     ensure  => running,
@@ -22,10 +20,4 @@ class pdns::service (
     enable  => true,
   }
 
-  case $monitoring {
-    'sensu': {
-      include pdns::monitoring::sensu
-    }
-    default: {}
-  }
 }
