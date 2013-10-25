@@ -9,7 +9,6 @@
 #
 class pdns::install {
 
-  include concat::setup
   include ruby::httparty
 
   Package {
