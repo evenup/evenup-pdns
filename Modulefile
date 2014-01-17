@@ -1,5 +1,5 @@
 name 'evenup-pdns'
-version '1.1.0'
+version '1.2.0'
 author 'Justin Lambert <jlambert@letsevenup.com>'
 license 'Apache'
 summary 'Installs PowerDNS and PuppetDB backend'
