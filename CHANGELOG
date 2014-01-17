@@ -1,3 +1,5 @@
+20140117 - v1.2.0
+  Switch to puppetlabs/concat
   Remove monitoring
 v1.1.0:
   Remove hiera() requirement
